@@ -1,0 +1,106 @@
+\documentclass[12pt, a4paper]{article}
+
+%%%%%% 	pacotes	%%%%%%%
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usepackage[T1]{fontenc}
+%\usepackage{fontspec} % habilita o comando /setmainfont{times new roman}
+\usepackage{graphicx, wrapfig} % para importar imagens e para coloca-las ao lado do texto
+
+\usepackage{amsmath, amsfonts, amssymb}
+
+%\usepackage{blindtext} % para gerar textos com o comando \blindtext[1]
+
+\usepackage[left=3cm,right=2cm,top=3cm,bottom=2cm]{geometry} % definindo as medidas das margens do papel
+
+%%%%%%%	preambulo	%%%%%%
+%\setmainfont{Times New Roman}
+\setlength{\baselineskip}{1.5cm} %define a distancia/espaçamento entre linhas para ser 1.5 cm (o padrao da norma ABNT)
+%\setlength{\parindent}{1.25cm} %define o recuo do paragrafo para ser 1.25cm (o padrao da norma ABNT)
+\setlength{\parindent}{0cm}
+
+\begin{document}
+\pagestyle{empty}
+
+\begin{wrapfigure}{L}{0.1\textwidth} % o parametro L: a posição da imagem em relação ao texto: a esquerda do texto. outros valores: l, r, i, o, R, O, I. Já o segundo parametro indica o quao perto o texto esta da imagem. Mudar apenas o valor numerico
+\includegraphics[width=0.065\textheight]{logo ufpe.jpg}
+%separando cada linha por multiplos de 1.5cm, o espaçamento padrão segundo as normas da ABNT.
+
+\end{wrapfigure}
+
+\noindent UNIVERSIDADE FEDERAL DE PERNAMBUCO\\CENTRO DE CIÊNCIAS EXATAS E DA NATUREZA\\DEPARTAMENTO DE MATEMÁTICA\\PRINCÍPIOS DE CONTAGEM - 2023.1\\PROFESSOR: WILLIKAT BEZERRA DE MELO\\TURMA: 2Z\\
+
+\begin{flushleft}
+
+MONITOR: JARDEL FELIPE CABRAL DOS SANTOS\\[1cm] 
+\end{flushleft}
+
+\begin{center} \textbf{ENCONTRO DE MONITORIA - 08/08/2023\\[1cm]}
+\end{center}
+
+\begin{center}
+\textbf{PROBLEMAS}
+\end{center}
+
+\textbf{1. Um homem tem 2 amigas e 4 amigos. Sua esposa tem 3 amigas e 3 amigos. De quantos modos eles podem convidar 3 amigas e 3 amigos, se cada um deve convidar 3 pessoas?} \\
+
+\textbf{2. De quantos modos é possível colocar em uma prateleira 6 livros de cálculo, 3 livros de análise combinatória e 4 livros de álgebra linear, considerando todos os livros como sendo diferentes e de modo que livros de um mesmo assunto permaneçam juntos?} \\
+
+\textbf{3. Quantas diagonais possui um prisma octagonal regular?} \\
+
+\begin{center}
+\textbf{RESOLUÇÃO}
+\end{center}
+
+\textbf{1.}
+
+Teremos os seguintes cenários: 
+\begin{itemize}
+\item \textbf{A mulher convida 3 amigas e seu marido convida e 3 amigos:}
+
+Nesse caso, existe apenas \(C^3_3 = 1\) maneira de escolher as pessoas que a mulher irá convidar e \(C^4_3 = 4\) maneiras de escolher as pessoas que o seu marido irá convidar. Assim, pelo princípio multiplicativo, há \(1 \cdot{4} = 4\) maneiras de convidar os amigos.
+
+\item \textbf{A mulher convida 2 amigas e 1 amigos e seu marido convida 1 amiga e 2 amigos:}
+
+Nesse caso, existem \(C^3_2 \times C^3_1 = 9\) maneiras de escolher os amigos da mulher e \(C^2_1 \times C^4_2 = 12\) maneiras e de escolher os amigos do seu marido. (Por quê?) Assim, pelo princípio multiplicativo, há \(9 \cdot{12} = 108\) maneiras de escolher os amigos.
+
+\item \textbf{A mulher convida 1 amiga e 2 amigos e seu marido convida 2 amigas e 1 amigo:}
+
+Nesse caso, existem \(C^3_1 \times C^3_2 = 9\) maneiras de escolher os amigos da mulher e \(C^2_2 \times C^4_1 = 4\) maneiras e de escolher os amigos do seu marido. (Por quê?) Assim, pelo princípio multiplicativo, há \(9 \cdot{4} = 36\) maneiras de escolher os amigos.
+\end{itemize}
+
+Note que esses são os únicos cenários possíveis, dadas as condições impostas no enunciado. Portanto, pelo princípio aditivo, há \(4 + 108+36=148\) maneiras de convidar as \(6\) pessoas. \\
+
+\textbf{2.}
+
+Ao final do processo, os livros ficarão enfileirados. Como os livros de um mesmo assunto permanecem juntos, poderemos dividir a fila em três outras filas menores: 
+
+\begin{enumerate}
+\item[(i)] a fila dos livros de cálculo:
+
+Há \(P^6_6 = 6!\) maneiras de ordenar os lívros desta fila.
+
+\item[(ii)] a fila dos livros de análise combinatória:
+
+Há \(P^3_3 = 3!\) maneiras de ordenar os lívros desta fila.
+
+\item[(iii)] a fila dos livros de álgebra linear:
+
+Há \(P^4_4 = 4!\) maneiras de ordenar os lívros desta fila.
+
+\end{enumerate}
+
+Após escolhida a ordem dos livros de cada fila, há \(P^3_3 = 3!\) maneiras de ordenar as filas (i), (ii) e (iii). Desse modo, pelo princípio multiplicativo, a quantidade de maneiras de colocar os livros na prateleira, respeitando as condições impostas, é \[6!\times3!\times4!\times3!=\left(3! \right)^2 \times 4! \times 6! = 622080\]
+ 
+\textbf{3.}
+
+Uma diagonal de um polígono (caso 2D) é um segmento de reta que liga dois vértices não consecutivos. Já uma diagonal de um poliedro (caso 3D) é um segmento que além de possuir essa propriedade, também possui a propriedade de não ser uma diagonal (2D) de qualquer uma de suas faces. \\
+
+A figura possui \(16\) vértices e \(24\) arestas. Como cada par de vértices selecionado determina um único segmento, então contar quantos pares de vértices existem é equivalente a contar quantos segmentos podem ser traçados na figura. Logo, há \(C^{16}_2 = 120\) segmentos possíveis. \\
+
+Nessa quantidade estão incluídos as diagonais do poliedro, diagonais das faces e as arestas, já que todas são segmentos. Calculando o número de diagonais de cada face: \\
+
+Temos \(8\) faces retangulares e \(2\) faces octagonais, cada uma com \(2\) e \(20\) diagonais, respectivamente (Por quê?). Portanto, utilizando os princípios multiplicativo e aditivo, temos que o número de diagonais das faces é: \[8\cdot{2} + 2\cdot{20}=56\]
+
+Desse modo, o número de diagonais do poliedro será igual a \[\underbrace{120}_{\text{total de segmentos}} - \overbrace{56}^{\text{diagonais (faces)}} - \underbrace{24}_{\text{arestas}} = 40\]
+\end{document}

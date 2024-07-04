@@ -1,0 +1,148 @@
+\documentclass[12pt, a4paper]{article}
+
+%%%%%% 	pacotes	%%%%%%%
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usepackage[T1]{fontenc}
+%\usepackage{fontspec} % habilita o comando /setmainfont{times new roman}
+\usepackage{graphicx, wrapfig} % para importar imagens e para coloca-las ao lado do texto
+
+\usepackage{amsmath, amsfonts, amssymb}
+
+%\usepackage{blindtext} % para gerar textos com o comando \blindtext[1]
+
+\usepackage[left=3cm,right=2cm,top=3cm,bottom=2cm]{geometry} % definindo as medidas das margens do papel
+
+%%%%%%%	preambulo	%%%%%%
+%\setmainfont{Times New Roman}
+\setlength{\baselineskip}{1.5cm} %define a distancia/espaçamento entre linhas para ser 1.5 cm (o padrao da norma ABNT)
+%\setlength{\parindent}{1.25cm} %define o recuo do paragrafo para ser 1.25cm (o padrao da norma ABNT)
+\setlength{\parindent}{0cm}
+
+\begin{document}
+\pagestyle{empty}
+
+\begin{wrapfigure}{L}{0.1\textwidth} % o parametro L: a posição da imagem em relação ao texto: a esquerda do texto. outros valores: l, r, i, o, R, O, I. Já o segundo parametro indica o quao perto o texto esta da imagem. Mudar apenas o valor numerico
+\includegraphics[width=0.065\textheight]{logo ufpe.jpg}
+%separando cada linha por multiplos de 1.5cm, o espaçamento padrão segundo as normas da ABNT.
+
+\end{wrapfigure}
+
+\noindent UNIVERSIDADE FEDERAL DE PERNAMBUCO\\CENTRO DE CIÊNCIAS EXATAS E DA NATUREZA\\DEPARTAMENTO DE MATEMÁTICA\\PRINCÍPIOS DE CONTAGEM - 2023.1\\PROFESSOR: WILLIKAT BEZERRA DE MELO\\TURMA: 2Z\\
+
+\begin{flushleft}
+
+MONITOR: JARDEL FELIPE CABRAL DOS SANTOS\\[1cm] 
+\end{flushleft}
+
+\begin{center} \textbf{ENCONTRO DE MONITORIA - 29/08/2023\\[1cm]}
+\end{center}
+
+\begin{center}
+\textbf{PROBLEMAS}
+\end{center}
+
+
+\textbf{1. Demonstre por indução matemática:} \\
+
+\textbf{(a) \(1+2+\ldots + n = \dfrac{n(n+1)}{2}\) para todo \(n \in \mathbb{N}\)} \\
+
+\textbf{(b) \((1+2+\ldots + n)^2 = 1^3 + 2^3 + \ldots + n^3\) para todo \(n \in \mathbb{N}\)\\Dica: utilize a igualdade do item (a)} \\
+
+\textbf{2. Quantas arestas têm \(K_{16}\)? e \(K_{n}\)?} \\
+
+
+\newpage
+
+\begin{center}
+\textbf{RESOLUÇÃO}
+\end{center}
+
+\textbf{1.} \\
+
+\textbf{(a)} \\
+
+\textbf{Caso base:} \\
+
+A igualdade é válida para \(n=1\)? \\
+
+Sim, pois, \(1 = \dfrac{1\cdot{2}}{2}\).  \\
+
+\textbf{Hipótese de indução:} \\
+
+Suponha que a igualdade é válida para \(n=k\), para algum \(k \geq 1\), com \(k \in \mathbb{N}\). \\
+
+\textbf{Passo de indução:} \\
+
+Queremos mostrar que a igualdade também é válida para \(k+1\), ou seja: \[1+2+\ldots + k + (k+1) = \dfrac{(k+1)(k+2)}{2}\]
+
+Note que \(\dfrac{(k+1)(k+2)}{2} = \dfrac{k^2 + 3k + 2}{2}\). \\
+
+Da hipótese de indução, temos que \[1+2+\ldots + k = \dfrac{k(k+1)}{2}\]
+
+Adicionando \(k+1\) em ambos os lados da igualdade: 
+\begin{align}
+&(1+2+\ldots + k)+(k+1)  = \frac{k(k+1)}{2}+(k+1) \; \Longleftrightarrow \\
+\Longleftrightarrow & \; 1+2+\ldots + k + (k+1) = \frac{k(k+1)}{2} + \mathbf{1}\cdot{(k+1)} \; \Longleftrightarrow  \\
+\Longleftrightarrow & \; 1+2+\ldots + k + (k+1) = \frac{k^2+k}{2} + \mathbf{\frac{2}{2}}(k+1) \; \Longleftrightarrow  \\
+\Longleftrightarrow & \; 1+2+\ldots + k + (k+1) = \frac{k^2+k}{2} + \frac{2k+2}{2} \; \Longleftrightarrow \\
+\Longleftrightarrow & \; 1+2+\ldots + k + (k+1) = \frac{k^2 + k + 2k +2}{2} \; \Longleftrightarrow  \\
+\Longleftrightarrow & \; 1+2+\ldots + k + (k+1) = \frac{k^2+3k+2}{2} \; \Longleftrightarrow \\ 
+\Longleftrightarrow & \; 1+2+\ldots + k + (k+1) = \frac{(k+1)(k+2)}{2}
+\end{align}
+
+Portanto, a igualdade é válida para \(k+1\). Desse modo, pelo princípio da indução finita, a igualdade é válida para todo \(n \in \mathbb{N}\).
+
+\begin{flushright}
+$\blacksquare$
+\end{flushright}
+
+\textbf{(b)} \\
+
+
+\textbf{Caso base:} \\
+
+A igualdade é válida para \(n=1\)? \\
+
+Sim, pois, \(1^2 = 1^3\).  \\
+
+\textbf{Hipótese de indução:} \\
+
+Suponha que a igualdade é válida para \(n=k\), para algum \(k \geq 1\), com \(k \in \mathbb{N}\). \\
+
+\textbf{Passo de indução:} \\
+
+Queremos mostrar que a igualdade também é válida para \(k+1\), ou seja: \[[1+2+\ldots + k + (k+1)]^2 = 1^3 + 2^3 + \ldots+k^3 + (k+1)^3\]
+
+Vimos no item (a) que \(1+2+\ldots+n = \dfrac{n(n+1)}{2}\). Assim, \[[1+2+\ldots+k+(k+1)]^2 = \left[\dfrac{(k+1)(k+2)}{2}\right]^2 =\] \[\dfrac{(k+1)^2(k+2)^2}{4} = \dfrac{(k^2+2k+1)(k^2+4k+4)}{4} = \dfrac{k^4+6k^3+13k^2+12k + 4}{4}\] 
+
+Logo, devemos mostrar que \[\dfrac{k^4+6k^3+13k^2+12k+4}{4} = 1^3 + 2^3 + \ldots+k^3 + (k+1)^3\] 
+
+\textbf{Mostrando a igualdade acima:} \\
+
+Da hipótese de indução, temos que \[(1+2+\ldots + k)^2 = 1^3 + 2^3 + \ldots + k^3\]
+
+Adicionando \((k+1)^3\) em ambos os lados da igualdade: 
+\begin{align}
+&\mathbf{(1+2+\ldots + k)^2}+(k+1)^3  = 1^3 + 2^3 + \ldots + k^3 +(k+1)^3 \; \Longleftrightarrow \\
+\Longleftrightarrow & \; \mathbf{\left[\dfrac{k(k+1)}{2}\right]^2} + (k+1)^3 = 1^3 + 2^3 + \ldots + k^3 +(k+1)^3 \; \Longleftrightarrow  \\
+\Longleftrightarrow & \; \dfrac{k^2(k+1)^2}{4} + \mathbf{1}\cdot{(k^3+3k^2+3k+1)} = 1^3 + 2^3 + \ldots + k^3 +(k+1)^3 \; \Longleftrightarrow  \\
+\Longleftrightarrow & \; \dfrac{k^2(k^2+2k+1)}{4} + \mathbf{\dfrac{4}{4}}\cdot{(k^3+3k^2+3k+1)} = 1^3 + \ldots +(k+1)^3 \; \Longleftrightarrow \\
+\Longleftrightarrow & \; \dfrac{k^4+2k^3+k^2}{4} + \dfrac{4k^3 + 12k^2 + 12k + 4}{4} = 1^3 + 2^3 + \ldots + k^3 +(k+1)^3 \; \Longleftrightarrow  \\
+\Longleftrightarrow & \; \dfrac{k^4+6k^3+13k^2+12k+4}{4} = 1^3 + 2^3 + \ldots + k^3 +(k+1)^3
+\end{align}
+
+Portanto, a igualdade é válida para \(k+1\). Desse modo, pelo princípio da indução finita, a igualdade é válida para todo \(n \in \mathbb{N}\), como queríamos demonstrar. \\
+
+\textbf{2.} \\
+
+Por definição, cada vértice do grafo \(K_n\) forma uma aresta com os vértices restantes. Desse modo, a quantidade de arestas de \(K_n\) é numericamente igual à quantidade de pares distintos de vértices de \(K_n\). Este último é igual a \(C^n_2 = \frac{n(n-1)}{2}\). \\
+
+Portanto, existem 
+\begin{itemize}
+\item \(\dfrac{16\times15}{2}=120\) arestas em \(K_{16}\)
+
+\item \(\dfrac{n(n-1)}{2}\) arestas em \(K_n\)
+\end{itemize}
+
+\end{document}

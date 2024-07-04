@@ -1,0 +1,87 @@
+\documentclass[12pt, a4paper]{article}
+
+%%%%%% 	pacotes	%%%%%%%
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usepackage[T1]{fontenc}
+%\usepackage{fontspec} % habilita o comando /setmainfont{times new roman}
+\usepackage{graphicx, wrapfig} % para importar imagens e para coloca-las ao lado do texto
+
+\usepackage{amsmath, amsfonts, amssymb}
+
+%\usepackage{blindtext} % para gerar textos com o comando \blindtext[1]
+
+\usepackage[left=3cm,right=2cm,top=3cm,bottom=2cm]{geometry} % definindo as medidas das margens do papel
+
+%%%%%%%	preambulo	%%%%%%
+%\setmainfont{Times New Roman}
+\setlength{\baselineskip}{1.5cm} %define a distancia/espaçamento entre linhas para ser 1.5 cm (o padrao da norma ABNT)
+%\setlength{\parindent}{1.25cm} %define o recuo do paragrafo para ser 1.25cm (o padrao da norma ABNT)
+\setlength{\parindent}{0cm}
+
+\begin{document}
+\pagestyle{empty}
+
+\begin{wrapfigure}{L}{0.1\textwidth} % o parametro L: a posição da imagem em relação ao texto: a esquerda do texto. outros valores: l, r, i, o, R, O, I. Já o segundo parametro indica o quao perto o texto esta da imagem. Mudar apenas o valor numerico
+\includegraphics[width=0.065\textheight]{logo ufpe.jpg}
+%separando cada linha por multiplos de 1.5cm, o espaçamento padrão segundo as normas da ABNT.
+
+\end{wrapfigure}
+
+\noindent UNIVERSIDADE FEDERAL DE PERNAMBUCO\\CENTRO DE CIÊNCIAS EXATAS E DA NATUREZA\\DEPARTAMENTO DE MATEMÁTICA\\PRINCÍPIOS DE CONTAGEM - 2023.1\\PROFESSOR: WILLIKAT BEZERRA DE MELO\\TURMA: 2Z\\
+
+\begin{flushleft}
+
+MONITOR: JARDEL FELIPE CABRAL DOS SANTOS\\[1cm] 
+\end{flushleft}
+
+\begin{center} \textbf{ENCONTRO DE MONITORIA - 15/08/2023\\[1cm]}
+\end{center}
+
+\begin{center}
+\textbf{PROBLEMAS}
+\end{center}
+
+\textbf{1. De um baralho de \textit{Poker} (7, 8, 9, 10, valete, dama, rei e ás, cada um desses grupos aparecendo em 4 naipes: copas, ouros, paus, espadas), sacam-se simultaneamente 5 cartas. Quantas são as extrações nas quais se forma: \\ \\(a) uma trinca (três cartas em um grupo e as outras duas em dois outros grupos diferentes)? \\ \\(b) um ``flush''  (5 cartas do mesmo naipe, não sendo elas de grupos consecutivos)?} \\
+
+\textbf{2. Quantas rodas de ciranda com exatamente 5 pessoas podem ser formadas de um grupo de 8 pessoas?} 
+
+\begin{center}
+\textbf{RESOLUÇÃO}
+\end{center}
+
+\textbf{1.}
+
+Note que não existe uma ordem para as cartas pois elas estão sendo sacadas simultaneamente. Assim, \\
+
+(a)
+
+Há \(C^8_1 = 8\) maneiras de escolher o grupo de cartas que formarão a trinca, pois existem \(8\) grupos de cartas. Feita essa escolha, há \(C^4_3 = 4\) maneiras de escolher os naipes das \(3\) cartas.  Resta escolher os grupos e naipes das duas cartas que sobraram. \\
+
+Há \(C^7_2 = 21\) maneiras de escolher os grupos das cartas, visto que elas devem ser de grupos distintos e não podem ser do grupo escolhido para a trinca. Por fim, para cada carta há \(C^4_1 = 4\) maneiras de escolher seu naipe. Não há problema haver duas ou mais cartas de um mesmo naipe. \\
+
+Desse modo, pelo princípio multiplicativo, há \(8\cdot{4}\cdot{21}\cdot{4}\cdot{4} = 12288\) extrações que satisfazem a propriedade desejada. \\
+
+(b)
+
+Há \(C^4_1 = 4\) maneiras de escolher o naipe das cartas que formarão o ``flush''. Feita essa escolha, há \(C^8_5 = 56\) maneiras de escolher os grupos das \(5\) cartas. Porém, dos grupos escolhidos estão incluidos àqueles que são consecutivos. Uma maneira de calcular quantos são é listando todos eles: 
+
+\begin{enumerate}
+\item O conjunto \(\{7, 8, 9, 10, J\}\)
+
+\item O conjunto \(\{8, 9, 10, J, Q\}\)
+
+\item O conjunto \(\{9, 10, J, Q, K\}\)
+
+\item O conjunto \(\{10, J, Q, K, A\}\)
+\end{enumerate} 
+
+Desse modo, a quantidade de grupos não consecutivos de \(5\) cartas é \(56 - 4 = 52\). Assim, pelo princípio multiplicativo, há \(4\cdot{52}= 208\) extrações que satisfazem a propriedade desejada. \\
+
+\textbf{2.}
+
+Há \(C^8_5 = 56\) maneiras de escolher as pessoas que farão parte da roda de ciranda. Feita essa escolha, há \(Q^5_5 = 4! = 24\) maneiras de formar rodas de ciranda com as pessoas escolhidas. 
+Desse modo, pelo princípio multiplicativo, há \(56\cdot{24}= 1344\) rodas de cirandas que podem ser formadas satisfazendo a condição estabelecida. \\
+
+
+\end{document}

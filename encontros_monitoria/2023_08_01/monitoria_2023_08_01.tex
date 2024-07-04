@@ -1,0 +1,86 @@
+\documentclass[12pt, a4paper]{article}
+
+%%%%%% 	pacotes	%%%%%%%
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usepackage[T1]{fontenc}
+%\usepackage{fontspec} % habilita o comando /setmainfont{times new roman}
+\usepackage{graphicx, wrapfig} % para importar imagens e para coloca-las ao lado do texto
+
+\usepackage{amsmath, amsfonts, amssymb}
+
+%\usepackage{blindtext} % para gerar textos com o comando \blindtext[1]
+
+\usepackage[left=3cm,right=2cm,top=3cm,bottom=2cm]{geometry} % definindo as medidas das margens do papel
+
+%%%%%%%	preambulo	%%%%%%
+%\setmainfont{Times New Roman}
+\setlength{\baselineskip}{1.5cm} %define a distancia/espaçamento entre linhas para ser 1.5 cm (o padrao da norma ABNT)
+%\setlength{\parindent}{1.25cm} %define o recuo do paragrafo para ser 1.25cm (o padrao da norma ABNT)
+\setlength{\parindent}{0cm}
+
+\begin{document}
+\pagestyle{empty}
+
+\begin{wrapfigure}{L}{0.1\textwidth} % o parametro L: a posição da imagem em relação ao texto: a esquerda do texto. outros valores: l, r, i, o, R, O, I. Já o segundo parametro indica o quao perto o texto esta da imagem. Mudar apenas o valor numerico
+\includegraphics[width=0.065\textheight]{logo ufpe.jpg}
+%separando cada linha por multiplos de 1.5cm, o espaçamento padrão segundo as normas da ABNT.
+
+\end{wrapfigure}
+
+\noindent UNIVERSIDADE FEDERAL DE PERNAMBUCO\\CENTRO DE CIÊNCIAS EXATAS E DA NATUREZA\\DEPARTAMENTO DE MATEMÁTICA\\PRINCÍPIOS DE CONTAGEM - 2023.1\\PROFESSOR: WILLIKAT BEZERRA DE MELO\\TURMA: 2Z\\
+
+\begin{flushleft}
+
+MONITOR: JARDEL FELIPE CABRAL DOS SANTOS\\[1cm] 
+\end{flushleft}
+
+\begin{center} \textbf{ENCONTRO DE MONITORIA - 01/08/2023\\[1cm]}
+\end{center}
+
+\begin{center}
+\textbf{PROBLEMAS}
+\end{center}
+
+\textbf{1. De quantos modos 5 rapazes e 3 moças podem se colocar em fila de modo que as moças fiquem juntas?} \\
+
+\textbf{2. Para o campeonato de vôleibol interescolar, a escola de Juca convocou 2 levantadores, 5 ponteiros, 2 opostos, 2 líberos e 3 centrais para compor seu time. De quantos modos é possível escalar a seleção da escola com 1 levantador, 1 líbero, 2 ponteiros, 1 oposto e 2 centrais?} \\
+
+\textbf{3. Permutam-se de todos os modos possíveis os algarismos 1, 3, 5, 7 e 9 e escrevem-se os números assim formados em ordem crescente. Que lugar ocupa o número 35197?} \\
+
+\begin{center}
+\textbf{RESOLUÇÃO}
+\end{center}
+
+\textbf{1.}
+
+Formaremos a fila da seguinte maneira: \\
+
+\((1)\) Colocaremos as moças em fila. Podemos fazer isso de \(P_{3}^{3} = 3!\) maneiras. \\
+
+\((2)\) Colocaremos em fila a fila de moças e os rapazes. Pense na fila de moças como uma entidade só. Então podemos fazer o enfileiramento de \(P_{6}^{6}=6!\) maneiras, onde \[6=\underbrace{5}_{\text{número de rapazes}}+\underbrace{1}_{\text{fila de moças}}\]
+
+Note que a condição é satisfeita dessa maneira, pois independente da posição na fila, as moças estarão juntas. Assim, pelo \textbf{Princípio Multiplicativo}, temos \(3! \times 6!=4320\) maneiras de formar a fila respeitando a condição das moças ficarem juntas. \\
+
+\textbf{2.}
+
+Para as posições de levantador, líbero e oposto temos \(2\) ou \(C_{1}^{2}\) maneiras de escolher o jogador. \\
+
+Para a posição de ponteiro temos \(C_{2}^{5}\) maneiras de escolher os dois jogadores. \\
+
+Por fim, para a posição de central temos \(C_{2}^{3}\) maneiras de escolher os dois jogadores. \\
+
+Logo, pelo \textbf{Princípio Multiplicativo}, temos 
+\(2\cdot{2}\cdot{2}\cdot{C_{2}^{5}}\cdot{C_{2}^{3}} = 240\) maneiras de escalar a seleção de vôleibol da escola de Juca. \\
+
+\textbf{3.}
+
+Há \(4\cdot{3}\cdot{2}\cdot{1}=24\) números que começam com o algarismo \(1\) pois cada número tem \(5\) dígitos distintos e temos \(5\) algarismos possíveis para escolher. Desse modo, com certeza o número \(35197\) está após a posição \(24^{\circ}\). \\ 
+
+Em seguida viriam os números que começam com o algarismo \(3\). Começariam a ser escritos os números que começam com \(3\) e tem segundo dígito igual a \(1\): que são \(3\cdot{2}\cdot{1} = 6\) números. Assim, com certeza o número está após a posição \(30^{\circ}\). \\
+
+Por fim, viriam os números que começam com \(3\) e tem segundo dígito igual a \(5\). Podemos listá-los em ordem crescente e determinar suas posições: 
+\[\underbrace{35179}_{31^{\circ}}, \underbrace{35197}_{32^{\circ}},\ldots\]O número \(35197\) ocupa a posição \(32^{\circ}\).  
+
+
+\end{document}

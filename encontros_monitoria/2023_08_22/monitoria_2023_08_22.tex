@@ -1,0 +1,103 @@
+\documentclass[12pt, a4paper]{article}
+
+%%%%%% 	pacotes	%%%%%%%
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usepackage[T1]{fontenc}
+%\usepackage{fontspec} % habilita o comando /setmainfont{times new roman}
+\usepackage{graphicx, wrapfig} % para importar imagens e para coloca-las ao lado do texto
+
+\usepackage{amsmath, amsfonts, amssymb}
+
+%\usepackage{blindtext} % para gerar textos com o comando \blindtext[1]
+
+\usepackage[left=3cm,right=2cm,top=3cm,bottom=2cm]{geometry} % definindo as medidas das margens do papel
+
+%%%%%%%	preambulo	%%%%%%
+%\setmainfont{Times New Roman}
+\setlength{\baselineskip}{1.5cm} %define a distancia/espaçamento entre linhas para ser 1.5 cm (o padrao da norma ABNT)
+%\setlength{\parindent}{1.25cm} %define o recuo do paragrafo para ser 1.25cm (o padrao da norma ABNT)
+\setlength{\parindent}{0cm}
+
+\begin{document}
+\pagestyle{empty}
+
+\begin{wrapfigure}{L}{0.1\textwidth} % o parametro L: a posição da imagem em relação ao texto: a esquerda do texto. outros valores: l, r, i, o, R, O, I. Já o segundo parametro indica o quao perto o texto esta da imagem. Mudar apenas o valor numerico
+\includegraphics[width=0.065\textheight]{logo ufpe.jpg}
+%separando cada linha por multiplos de 1.5cm, o espaçamento padrão segundo as normas da ABNT.
+
+\end{wrapfigure}
+
+\noindent UNIVERSIDADE FEDERAL DE PERNAMBUCO\\CENTRO DE CIÊNCIAS EXATAS E DA NATUREZA\\DEPARTAMENTO DE MATEMÁTICA\\PRINCÍPIOS DE CONTAGEM - 2023.1\\PROFESSOR: WILLIKAT BEZERRA DE MELO\\TURMA: 2Z\\
+
+\begin{flushleft}
+
+MONITOR: JARDEL FELIPE CABRAL DOS SANTOS\\[1cm] 
+\end{flushleft}
+
+\begin{center} \textbf{ENCONTRO DE MONITORIA - 22/08/2023\\[1cm]}
+\end{center}
+
+\begin{center}
+\textbf{PROBLEMAS}
+\end{center}
+
+\textbf{1. Quantas são as permutações simples dos números \(1, 2,\ldots , n\) nas quais o elemento que ocupa a \(k\)-ésima posição é inferior a \(k+ 4\), para todo \(k\)?} \\
+
+\textbf{2. Quantas são as permutações dos números \(\{1, 2, \ldots, 10\}\) nas quais o \(5\) está situado à direita do \(2\) e à esquerda do \(3\), embora não necessariamente em lugares consecutivos?} 
+
+\begin{center}
+\textbf{RESOLUÇÃO}
+\end{center}
+
+\textbf{1.}
+
+
+Se \(1 \leq n \leq 4\) então existem \(P^n_n = n!\) maneiras de permutar os números. Já para \(n > 4\), temos que: \\
+
+Para o número que ocupa a primeira posição, há \(4\) escolhas possíveis, visto que o número deve ser menor do que \(1 + 4 =5\). \\
+
+Feita essa escolha, há \(4\) escolhas possíveis para o número que ocupa a segunda posição. Isso porque o número deve ser menor do que \(6\), então ele pode ser os números de \(1\) até \(5\), porém devemos desconsiderar, entre esses números, o número que foi escolhido anteriormente para ocupar a primeira posição. \\
+
+De maneira análoga, considerando feitas as escolhas das posições anteriores a um dado \(k \), se \(k+4 \leq n+1\) (ou seja, se \(k \leq n - 3\)), então teremos \(4\) escolhas possíveis para o número que ocupa a posição \(k\). \\
+
+De fato, podemos escolher os números de \(1\) até \(k+3\), já que o número deve ser menor que \(k+4\). Porém, devemos desconsiderar, dentre esses números, os \(k-1\) números escolhidos anteriormente. Assim, teremos \((k+3)-(k-1) = 4\) escolhas para o número da posição \(k\). \\
+
+Supondo escolhidos os primeiros \(n-3\) números, para os demais, prosseguiremos da seguinte maneira: \\
+
+Para a posição \(n-2\), devemos escolher um número que seja menor que \((n-2)+4=n+2\). Podemos escolher dentre os números de \(1\) até \(n\). Porém, devemos desconsiderar, dentre esses, os números escolhidos anteriormente para as \(n-3\) primeiras posições. Então, temos \(n - (n-3) = 3\) escolhas para o número que se encontra na posição \(n-2\). \\
+
+Analogamente, para a posição \(n-1\), devemos escolher um número que seja menor que \((n-1)+4=n+3\). Podemos escolher dentre os números de \(1\) até \(n\). Porém, devemos desconsiderar, dentre esses, os números escolhidos anteriormente para as \(n-2\) primeiras posições. Então, temos \(n - (n-2) = 2\) escolhas para o número que se encontra na posição \(n-1\). \\
+
+Por fim, teremos apenas \(1\) escolha para o número que se encontra na posição \(n\). (Por quê?) \\
+
+Assim, pelo princípio multiplicativo, existem \(\underbrace{4\cdot{4}\cdot{\ldots}\cdot{4}}_{n-3 \text{ vezes}}\cdot{3}\cdot{2}\cdot{1} = 4^{n-4}\times 4!\) maneiras de permutar os números respeitando as condições impostas. \\
+
+\textbf{2.}
+
+
+Formaremos uma permutação que respeita essas regras da seguinte maneira: \\
+
+(1) Retire os elementos \(2\), \(5\) e \(3\) do conjunto e permute os demais elementos do conjunto. Há \(P^7_7 = 7!\) maneiras de permutar os elementos. \\
+
+(2) Dada uma permutação \(n_1 n_2 n_3 n_4 n_5 n_6 n_7\), coloque os números restantes em uma ou mais posições abaixo. 
+\[\underbrace{\ldots}_{\text{pos. 1}}n_1 \underbrace{\ldots}_{\text{pos. 2}}n_2 \underbrace{\ldots}_{\text{pos. 3}}n_3 \underbrace{\ldots} _{\text{pos. 4}}n_4 \underbrace{\ldots} _{\text{pos. 5}}n_5 \underbrace{\ldots} _{\text{pos. 6}}n_6 \underbrace{\ldots}_{\text{pos. 7}}n_7 \underbrace{\ldots}_{\text{pos. 8}}\]
+
+Cada posição pode ter de \(0\) à \(3\) números. É preciso impor que o \(2\) sempre esteja numa posição anterior (não necessariamente consecutiva) à posição do \(5\) e o \(5\) sempre esteja numa posição anterior (não necessariamente consecutiva) à posição do \(3\). Assim, se colocamos um número na posição 6, um número na posição 1 e um número na posição 8, então necessariamente o número da posição 1 é \(2\), o número da posição 6 é \(5\) e o número da posição 8 é \(3\). Nesse caso, teremos as permutações do tipo: \(2n_1n_2n_3n_4n_55n_6n_73\). \\
+
+Por outro lado, se existe mais de um número numa mesma posição, por exemplo: dois números na posição 1 e um número na posição 7, então os números que estão na posição 1 serão \(2\) e \(5\), nessa ordem, e o número na posição 7 será \(3\). Ou seja, os três números sempre devem  respeitar a ordem entre eles, imposta no enunciado. Nesse caso, teremos as permutações do tipo: \(25n_1n_2n_3n_4n_5n_63n_7\). \\
+
+A soma do total de números em cada posição deve ser igual a \(3\). Tendo isso em mente, note que podemos associar, de maneira única, uma lista ordenada de oito entradas para cada posicionamento dos três números. Por exemplo: \((1, 0,0,0,1,0,0,1)\) para as permutações do tipo \(2n_1n_2n_3n_4n_55n_6n_73\) e \((2, 0,0,0,1,0,1,0)\) para as permutações do tipo \(25n_1n_2n_3n_4n_5n_63n_7\).   \\
+
+Além disso, cada lista associada a um posicionado dos três números, corresponde a uma solução inteira não-negativa da equação \[x_1 + x_2 + x_3 + x_4+x_5 + x_6 + x_7 + x_8=3\]
+
+Desse modo, podemos associar, de maneira biunívoca, cada lista ordenada com uma solução da equação. Assim, contar de quantas maneiras podemos colocar os números \(2\), \(5\) e \(3\) em pelo menos uma das oito posições disponíveis, respeitando a condição estabelecida, é equivalente a contar quantas soluções inteiras não negativas possui a equação \[x_1 + x_2 + x_3 + x_4+x_5 + x_6 + x_7 + x_8=3\]
+
+Vimos, no encontro de monitoria do dia 11/08/2023, uma fórmula para contar quantas soluções uma equação do tipo possui. Sendo \(7\) a quantidade de sinais ``\(+\)'' e \(3\) o resultado da soma, a equação possuirá uma quantidade de soluções inteiras não-negativas igual a \[P_{(10;3, 7)} = \dfrac{10!}{3! \times 7!}\]
+
+Logo, temos \(P_{(10;3, 7)}\) maneiras de realizar a etapa (2).\\
+
+Portanto, pelo princípio multiplicativo, a quantidade de permutações que respeitam a condição imposta no enunciado é igual a \[7! \times \left(\dfrac{10!}{3! \times 7!}\right) = \dfrac{10!}{3!} = P^7_3 = 840\]
+
+
+\end{document}

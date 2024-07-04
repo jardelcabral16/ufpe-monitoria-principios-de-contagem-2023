@@ -1,0 +1,130 @@
+\documentclass[12pt, a4paper]{article}
+
+%%%%%% 	pacotes	%%%%%%%
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usepackage[T1]{fontenc}
+%\usepackage{fontspec} % habilita o comando /setmainfont{times new roman}
+\usepackage{graphicx, wrapfig} % para importar imagens e para coloca-las ao lado do texto
+
+\usepackage{amsmath, amsfonts, amssymb}
+
+%\usepackage{blindtext} % para gerar textos com o comando \blindtext[1]
+
+\usepackage[left=3cm,right=2cm,top=3cm,bottom=2cm]{geometry} % definindo as medidas das margens do papel
+
+%%%%%%%	preambulo	%%%%%%
+%\setmainfont{Times New Roman}
+\setlength{\baselineskip}{1.5cm} %define a distancia/espaçamento entre linhas para ser 1.5 cm (o padrao da norma ABNT)
+%\setlength{\parindent}{1.25cm} %define o recuo do paragrafo para ser 1.25cm (o padrao da norma ABNT)
+\setlength{\parindent}{0cm}
+
+\begin{document}
+\pagestyle{empty}
+
+\begin{wrapfigure}{L}{0.1\textwidth} % o parametro L: a posição da imagem em relação ao texto: a esquerda do texto. outros valores: l, r, i, o, R, O, I. Já o segundo parametro indica o quao perto o texto esta da imagem. Mudar apenas o valor numerico
+\includegraphics[width=0.065\textheight]{logo ufpe.jpg}
+%separando cada linha por multiplos de 1.5cm, o espaçamento padrão segundo as normas da ABNT.
+
+\end{wrapfigure}
+
+\noindent UNIVERSIDADE FEDERAL DE PERNAMBUCO\\CENTRO DE CIÊNCIAS EXATAS E DA NATUREZA\\DEPARTAMENTO DE MATEMÁTICA\\PRINCÍPIOS DE CONTAGEM - 2023.1\\PROFESSOR: WILLIKAT BEZERRA DE MELO\\TURMA: 2Z\\
+
+\begin{flushleft}
+
+MONITOR: JARDEL FELIPE CABRAL DOS SANTOS\\[1cm] 
+\end{flushleft}
+
+\begin{center} \textbf{ENCONTRO DE MONITORIA - 11/08/2023\\[1cm]}
+\end{center}
+
+\begin{center}
+\textbf{PROBLEMAS}
+\end{center}
+
+\textbf{1. Em um grupo de 9 meninas, sabendo que Ana, Beatriz e Cecília se odeiam e não podem ficar juntas, de quantos modos podemos formar uma roda de ciranda com todas as meninas?} \\
+
+\textbf{2. Determine quantas soluções nos inteiros não-negativos possui a equação \[X+Y+Z+W=5\]} 
+
+\begin{center}
+\textbf{RESOLUÇÃO}
+\end{center}
+
+\textbf{1.}
+
+Seja \(\Omega\) o conjunto de todas as rodas de ciranda distintas que podem ser feitas com as \(9\) meninas. Sejam \(A\) o conjunto de todas as rodas de ciranda nas quais Ana e Beatriz estão juntas; \(B\) o conjunto de todas as rodas de ciranda nas quais Ana e Cecília estão juntas; e \(C\) o conjunto de todas as rodas de ciranda nas quais Cecília e Beatriz estão juntas. Esses conjuntos são subconjuntos de \(\Omega\). \\
+
+Observação: estamos considerando a menina X ``estar junta'' da menina Y como sendo: a menina X está à esquerda da menina Y ou a menina X está à direita da menina Y na roda. \\
+
+Denotando \(|X|\) como sendo a quantidade de elementos do conjunto \(X\), e denotando \(X^c\) como sendo \(\Omega - X = \{t \in \Omega: t \notin X\}\), temos que \[|\Omega| = |A\cup B \cup C| + |(A \cup B  \cup C)^c|\]
+
+Note que a resposta do problema será igual a \(|(A \cup B  \cup C)^c|\). Vamos calcular \(|\Omega|\) e \(|A \cup B  \cup C|\) abaixo: \\
+ 
+Calculando \(|\Omega|\): \\ 
+Há \(Q^{9}_{9}= \dfrac{P^9_9}{9} = \dfrac{9!}{9} = 8!\) rodas de cirandas distintas que podemos formar com as \(9\) meninas. Então, \(|\Omega| = 8!\). \\
+
+Calculando \(|A \cup B  \cup C|\): \\
+Note que para todo conjunto finito \(A\), \(B\) e \(C\), temos que: \[|A \cup B  \cup C| = |A|+|B|+|C| - \left(|A \cap B| + |A \cap C| + |B \cap C|\right)+|A \cap B \cap C|\]
+
+Vamos calcular os valores das parcelas dessa adição e somá-las para obter o que desejamos: \\
+
+Calculando \(|A|\), \(|B|\) e \(|C|\): \\
+Para cada caso que duas das garotas estão juntas, temos dois cenários possíveis. Veja um exemplo com o caso de Ana e Beatriz juntas: \\
+
+\textbf{(1) ou Ana está a esquerda de Beatriz}:
+Considerando a dupla Ana-Beatriz como uma entidade só, temos \(Q^{8}_{8} = 7!\) maneiras de formar uma ciranda com as duas juntas. \\
+
+\textbf{(2) ou Ana está à direita de Beatriz}:
+Analogamente, temos \(Q^8_8 = 7!\) maneiras de formar uma ciranda com as duas juntas. \\
+
+Assim, pelo princípio aditivo, existem \(7! + 7! = 2\times 7!\) rodas de ciranda em que as duas garotas estão juntas. Como podemos utilizar esse argumento, fazendo apenas algumas alterações, em qualquer um dos casos, então temos \(|A| = |B| = |C| = 2\times7!\) \\
+
+Calculando \(|A \cap B|\), \(|A \cap C|\) e \(|B \cap C|\):
+
+Por conta da maneira que definimos \(A\), \(B\) e \(C\), teremos que \(A \cap B\) será o conjunto das rodas de ciranda nas quais Ana está entre Beatriz e Cecília; \(A \cap C\) será o conjunto das rodas de ciranda nas quais Beatriz está entre Ana e Cecília; e \(B \cap C\) será o conjunto das rodas de ciranda nas quais Cecília está entre Ana e Cecília. \\
+
+Para cada conjunto teremos duas possibilidades, relacionadas à quem está à direita da pessoa que está no meio. Para ilustrar, calcularemos \(|A \cap B|\): \\ 
+
+\textbf{(1) ou Ana está à esquerda de Beatriz e à direita de Cecília};\\ \textbf{(2) ou Ana está à direita de Beatriz e à esquerda de Cecília;}\\
+
+Para calcular a quantidade de rodas de ciranda em cada um dos cenários, basta considerar o trio Ana-Beatriz-Cecília (não necessariamente nessa ordem) como uma entidade só. Assim, temos \(Q^{7}_{7} = 6!\) maneiras de formar uma roda com o trio e as \(6\) pessoas restantes. \\
+
+Então, pelo princípio multiplicativo, teremos: \[|A \cap B| = |A \cap C| = |B \cap C| = 2 \times 6!\] 
+
+Resta calcular \(|A \cap B \cap C|\). Porém, por conta da maneira que definimos os conjuntos, esse conjunto não possuirá elementos, já que um elemento dele teria que ser uma roda de ciranda na qual Ana está entre Beatriz e Cecília e ao mesmo tempo Beatriz está entre Ana e Cecília. Desse modo, \(|A \cap B \cap C| = |\emptyset| = 0\). \\
+
+Daí, teremos \[|A \cup B  \cup C| = 2 \times 7! + 2 \times 7! + 2 \times 7! - (2 \times 6! + 2 \times 6! + 2 \times 6!) + 0 =\] \[= 6 \times 7! - 6\times 6! = 6(7! - 6!) = 6(7 \times 6! -  1\times 6!) = 6(6 \times 6!) = 36 \times 6! \]
+
+Portanto, como \( |(A \cup B  \cup C)^c| = |\Omega| - |A\cup B \cup C|\), teremos que: \[ |(A \cup B  \cup C)^c| = 8! - 36 \times 6! = 8 \times 7 \times 6! - 36 \times 6! = 20 \times 6! = 20 \times 720 = 14400\] 
+
+\textbf{2.}
+
+Podemos representar cada solução como uma lista ordenada de \(4\) números \((X, Y, Z, W)\). Desse modo, \((1,0,2,2)\) representa a solução: \(X = 1\), \(Y=0\), \(Z = W = 2\). As condições que cada lista deve respeitar são: \\ 
+
+(i) \(X, Y, Z, W \in \mathbb{Z}_+\)
+
+(ii) \(X+Y+Z+W = 5\)\\
+
+Dessas duas podemos deduzir que \(0 \leq A  \leq 5, \; \forall A \in \{X,Y,Z,W\}\). Assim, contar quantas soluções nos inteiros não-negativos possui a equação é equivalente a contar quantas listas ordenadas diferentes que respeitam as condições (i) e (ii) existem.\\
+
+Para resolver esse problema de contar listas, será introduzido um novo problema e mostraremos que resolvê-lo é equivalente à resolver o problema da contagem de listas: \\
+
+\textbf{Problema: dadas as letras A,A,A,A,A,B,B,B; quantos anagramas podem ser formados usando todas elas?} \\
+
+A resposta desse problema é \(P_{(8; 5,3)} = \dfrac{8!}{5!\times 3!}\) maneiras. \\
+
+Considere um anagrama qualquer formado com essas letras. Por exemplo: ABAAABAB. Podemos associá-lo a uma única lista \((X,Y,Z,W)\) que satisfaz as propriedades (i) e (ii) mencionadas acima. A associação aconteceria da seguinte maneira: \\
+
+(a) \(X\) seria igual à quantidade de letras ``A'' antes da primeira letra ``B''. \\
+(b) \(Y\) seria igual à quantidade de letras ``A'' entre a primeira e a segunda letra ``B''. \\
+(c) \(Z\) seria igual à quantidade de letras ``A'' entre a segunda e a terceira letra ``B''. \\
+(d) \(W\) seria igual à quantidade de letras ``A'' após a terceira letra ``B''. \\
+
+Observação: se, em uma das situações, não houver letras ``A'', diremos que a quantidade será zero.\\
+
+Assim, a lista \((X,Y,Z,W)\) associada com o anagrama ABAAABAB é \((1,3,1,0)\). Note que a recíproca também é válida: podemos associar cada lista que satisfaz as propriedades (i) e (ii) com um único anagrama formado utilizando \(5\) letras ``A'' e \(3\) letras ``B''. \\
+
+Desse modo, estabelecemos a equivalência entre os dois problemas, pois a quantidade de anagramas será numericamente igual à quantidade de listas. Portanto, quantidade de soluções inteiras não-negativas da equação é: \[P_{(8; 5,3)} = \dfrac{8!}{5!\times 3!} = 56\] 
+
+
+\end{document}
