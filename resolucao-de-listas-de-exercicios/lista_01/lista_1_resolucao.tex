@@ -1,0 +1,361 @@
+\documentclass[12pt, a4paper]{article}
+
+%%%%%% 	pacotes	%%%%%%%
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usepackage[T1]{fontenc}
+%\usepackage{fontspec} % habilita o comando /setmainfont{times new roman}
+\usepackage{graphicx, wrapfig} % para importar imagens e para coloca-las ao lado do texto
+
+\usepackage{amsmath, amsfonts, amssymb, mathrsfs} %este ultimo para o comando \mathscr{<texto>}
+
+%\usepackage{blindtext} % para gerar textos com o comando \blindtext[1]
+
+\usepackage[left=3cm,right=2cm,top=3cm,bottom=2cm]{geometry} % definindo as medidas das margens do papel
+
+%%%%%%%	preambulo	%%%%%%
+%\setmainfont{Times New Roman}
+\setlength{\baselineskip}{1.5cm} %define a distancia/espaçamento entre linhas para ser 1.5 cm (o padrao da norma ABNT)
+%\setlength{\parindent}{1.25cm} %define o recuo do paragrafo para ser 1.25cm (o padrao da norma ABNT)
+\setlength{\parindent}{0cm}
+
+\begin{document}
+\pagestyle{empty}
+
+\begin{wrapfigure}{L}{0.1\textwidth} % o parametro L: a posição da imagem em relação ao texto: a esquerda do texto. outros valores: l, r, i, o, R, O, I. Já o segundo parametro indica o quao perto o texto esta da imagem. Mudar apenas o valor numerico
+\includegraphics[width=0.065\textheight]{logo ufpe.jpg}
+%separando cada linha por multiplos de 1.5cm, o espaçamento padrão segundo as normas da ABNT.
+
+\end{wrapfigure}
+
+\noindent UNIVERSIDADE FEDERAL DE PERNAMBUCO\\CENTRO DE CIÊNCIAS EXATAS E DA NATUREZA\\DEPARTAMENTO DE MATEMÁTICA\\PRINCÍPIOS DE CONTAGEM - 2023.1\\PROFESSOR: WILLIKAT BEZERRA DE MELO\\TURMA: 2Z\\
+
+\begin{flushleft}
+
+MONITOR: JARDEL FELIPE CABRAL DOS SANTOS\\[1cm] 
+\end{flushleft}
+
+\begin{center} \textbf{RESOLUÇÃO DA LISTA 1}
+\end{center}
+
+
+
+\textbf{1. Sendo \(A = \{1,2\}\), \(B = \{2,3\}\), \(C = \{1,3,4\}\) e \(D = \{1,2,3,4\}\), classifique em verdadeiro ou falso cada sentença abaixo e justifique:} \\
+
+\textbf{(a) \(A \subset D\)} \\
+
+Verdadeiro, pois todo elemento de \(A\) também é elemento de \(D\). \\
+
+\textbf{(b) \(A \subset B\)} \\
+
+Falso, pois \(1 \in A\) porém \(1 \notin B\). Ou seja, existe um elemento de \(A\) que não é elemento de \(B\).  \\
+
+\textbf{(c) \(B \subset C\)} \\
+
+Falso, pois \(2 \in B\) porém \(2 \notin C\).   \\
+
+\textbf{(d) \(D \supset B\)} \\
+
+Recorde que \(D \supset B\) é o mesmo que \(B \subset B\). Assim, a sentença é verdadeira, pois todo elemento de \(B\) também é elemento de \(D\). \\
+
+\textbf{(e) \(C = D\)} \\
+
+Dois conjuntos são iguais se, e somente se, eles possuem os mesmos elementos, ou seja, se \(C \subset D\) e \(D \subset C\). Portanto, a sentença é falsa, pois é falso que \(D \subset C\) já que \(2 \in D\) porém \(2 \notin C\).    \\
+
+\textbf{(f) \(A \not\subset C\)} \\
+
+Verdadeiro, pois \(2 \in A\) porém \(2 \notin C\). \\
+\newpage
+\textbf{2. Diga se é verdadeira ou falsa cada uma das setenças abaixo.} \\
+
+\textbf{(a) \(0 \in \{0,1,2,3,4\}\)} \\
+
+A sentença é verdadeira.\\
+
+\textbf{(b) \(\{a\} \in \{a,b\}\)} \\
+
+A sentença é falsa, pois \(\{a\} \notin \{a,b\}\). Por outro lado, é correto afirmar que \(\{a\} \subset \{a,b\}\). Se a sentença fosse \(\{a\} \in \{\{a\},b\}\), então ela seria verdadeira. Nesse caso, \(\{a\} \not \subset \{\{a\},b\}\) pois \(a \in \{a\}\), porém \(a \notin \{\{a\},b\}\)\\
+
+\textbf{(c) \(\varnothing \subset \{0\}\)} \\
+
+A sentença é verdadeira. Para todo conjunto \(A\), temos que \(\varnothing \subset A\). Caso contrário, se \(\varnothing \not \subset A\), então existiria \(x \in \varnothing\) tal que \(x \in \varnothing\) porém \(x \notin A\). Como \(\varnothing\) não possui elementos, então ele necessariamente não satisfaz a condição de NÃO ser subconjunto de \(A\). Assim, concluí-se que ele é subconjunto de \(A\). \\
+
+\textbf{(d) \(0 \in \varnothing\)} \\
+
+A sentença é falsa, pois \(\varnothing\) não possui elementos. \\
+
+\textbf{(e) \(\{a\} \subset \varnothing\)} \\
+
+A sentença é falsa, \(a \in \{a\}\) porém \(a \notin \varnothing\). Assim, \(\{a\} \not \subset \varnothing\).
+
+\textbf{(f) \(a \in \{a,\{a\}\}\)} \\
+
+A sentença é verdadeira. \\
+
+\textbf{(g) \(\{a\} \subset \{a,\{a\}\}\)} \\
+
+A sentença é verdadeira. Estamos diante de um caso em que \(\{a\} \in \{a,\{a\}\}\) e também \(\{a\} \subset \{a, \{a\}\}\). Este último se deve ao fato de que todo elemento do conjunto \(\{a\}\) também é elemento do conjunto \(\{a, \{a\}\}\). \\
+
+\textbf{(h) \(\varnothing \subset \{\varnothing, \{a\}\}\)} \\
+
+A sentença é verdadeira. A justificativa é a mesma do item (c). \\
+
+\textbf{(i) \(\varnothing \in \{\varnothing, \{a\}\}\)} \\
+
+A sentença é verdadeira. \\
+
+\textbf{(j) \(\{a,b\} \in \{a,b,c,d\}\)} \\
+
+A sentença é falsa, pois \(\{a,b\} \notin \{a,b,c,d\}\). Se a sentença fosse \(\{a,b\} \in \{\{a,b\},c,d\}\), então ela estaria correta. \\
+
+
+\textbf{3. Vamos determinar cada um dos conjuntos a seguir, onde} 
+\begin{align*}
+U &= \{0,1,2,3,\ldots, 10\}  \\
+A &= \{0,1,2,3,4,5\} \\
+B &= \{0,2,4,6,8,10\} \\
+C &= \{2,3,5,7\} \\
+\end{align*}
+
+\textbf{(a) \(A \cup B\)} 
+
+\[A \cup B = \{x: x \in A \text{ ou } x \in B\} = \{0,1,2,3,4,5,6,8,10\}\]  \\
+
+\textbf{(b) \(A \cap C\)} 
+
+\[A \cap C = \{x: x \in A \text{ e } x \in C\} = \{2,3,5\}\] \\
+
+\textbf{(c) \(A^c \cup B\)} 
+
+\[A^c = U - A = \{x:x \in U \text{ e } x \notin A\} = \{6,7,8,9,10\}\] 
+
+\[A^c \cup B = \{x: x \in A^c \text{ ou } x \in B\} = \{0, 2,4,6,7,8,9,10\}\] \\
+
+\textbf{(d) \(A \cap B \cap C\)} 
+
+\[A \cap B \cap C = (A \cap B) \cap C = A \cap (B \cap C)\] 
+
+\[B \cap C = \{x: x \in B \text{ e } x \in C\} = \{2\}\] 
+
+\[A \cap (B \cap C) = \{x: x \in A \text{ e } x \in B \cap C\} = \{2\}\] \\
+
+\textbf{(e) \(A^c \cap B \cap C\)} 
+
+\[A^c \cap B \cap C = (A^c \cap B) \cap C = A^c \cap (B \cap C) = \{x: x \in A^c \text{ e } x \in B \cap C\} = \varnothing\] \\
+
+
+\textbf{(f) \(A \cup (B \cap C)\)} 
+
+\[A \cup (B \cap C) = \{x: x \in A \text{ ou } x \in B \cap C\} = \{0,1,2,3,4,5\}\] \\
+
+
+\textbf{(g) \(A \cap (B \cup C)\)} 
+
+\[B \cup C =  \{x: x \in B \text{ ou } x \in C\} = \{0,2,3,4,5,6,7,8,10\}\]
+
+\[A \cap (B \cup C) = \{x: x \in A \text{ e } x \in B \cup C\} = \{0,2,3,4,5\}\] \\
+
+
+\textbf{(h) \((A \cup B^c)^c \)} 
+
+\[B^c  = U - B =  \{x: x \in U \text{ e } x \notin B\} = \{1,3,5,7,9\}\] 
+
+\[A \cup B^c = \{x:x \in A \text{ ou } x \in B^c\} = \{0,1,2,3,4,5,7,9\}\] 
+
+\[(A \cup B^c)^c = U - (A \cup B^c) = \{x: x \in U \text{ e } x \notin A \cup B^c\} = \{6, 8, 10\}\] \\
+
+
+\textbf{(i) \(A - B\)} 
+
+\[A- B =  \{x: x \in A \text{ e } x \notin B\} = \{1, 3, 5\}\] \\ 
+
+
+\textbf{(j) \(B - A\)} 
+
+\[B - A =  \{x: x \in B \text{ e } x \notin A\} = \{6, 8, 10\}\] \\
+
+\textbf{(k) \(A - (B-C)\)} 
+
+\[B-C =  \{x: x \in B \text{ e } x \notin C\} = \{0,4,6,8,10\}\]
+
+\[A - (B-C) = \{x: x \in A \text{ e } x \notin B-C\} = \{1, 2, 3, 5\}\] \\
+
+\textbf{(l) \(C - (B-A)\)} 
+
+\[C - (B-A) =  \{x: x \in C \text{ e } x \notin B-A\} = \{2,3,5,7\}\] \\
+
+\textbf{(m) \((A - B) \cap (C - B)\)} 
+
+\[C-B = \{x: x \in C \text{ e } x \notin B\} = \{3, 5, 7\}\]
+
+\[(A-B) \cap (C - B) = \{x: x \in A-B \text{ e } x \in C - B\} = \{3,5\}\] \\
+
+\textbf{(n) \((A - B) \cap (A - C)\)}
+
+\[A - C = \{x: x \in A \text{ e } x \notin C\} = \{0, 1, 4\}\]
+
+\[(A-B) \cap (A - C) = \{x: x \in A-B \text{ e } x \in A - C\} = \{1\}\] \\
+\newpage
+
+\textbf{4. Escreva o conjunto das partes, \(\mathscr{P}(A)\), para cada conjunto \(A\).} \\
+
+\textbf{(a) \(A= \{a\}\)} \\
+
+Subconjuntos de \(A\): \(\varnothing\) e \(\{a\} = A\) \\
+
+\(\mathscr{P}(A) = \{\varnothing, A\}\) \\
+
+\textbf{(b) \(A= \{0,1\}\)} \\
+
+Subconjuntos de \(A\): \(\varnothing\), \(\{0\}\), \(\{1\}\) e \(\{0,1\} = A\) \\
+
+\(\mathscr{P}(A) = \{\varnothing, \{0\}, \{1\}, A\}\) \\
+
+
+\textbf{(c) \(A= \{a,b,c\}\)} \\
+
+Subconjuntos de \(A\): \(\varnothing\), \(\{a\}\), \(\{b\}\), \(\{c\}\), \(\{a,b\}\), \(\{a,c\}\), \(\{b,c\}\) e  \(\{a,b,c\} = A\) \\
+
+\(\mathscr{P}(A) = \{\varnothing, \{a\}, \{b\}, \{c\}, \{a,b\}, \{a,c\}, \{b,c\}, A\}\) \\
+
+
+\textbf{(d) \(A= \{1,2,3,4\}\)} \\
+
+Subconjuntos de \(A\): \(\varnothing\), \(\{1\}\), \(\{2\}\), \(\{3\}\), \(\{4\}\), \(\{1,2\}\), \(\{1,3\}\), \(\{1,4\}\), \(\{2,3\}\), \(\{2,4\}\), \(\{3,4\}\), \(\{1,2,3\}\), \(\{1,2,4\}\), \(\{1,3,4\}\), \(\{2,3,4\}\) e  \(\{1,2,3,4\} = A\) \\
+
+Sejam \(X\) e \(Y\) os conjuntos: \[X = \{\varnothing, \{1\}, \{2\}, \{3\}, \{4\}, \{1,2\}, \{1,3\}, \{1,4\}, \{2,3\}, \{2,4\}, \{3,4\}\}\] \[Y = \{  \{1,2,3\}, \{1,2,4\}, \{1,3,4\}, \{2,3,4\},  A\}\]
+Então, 
+\(\mathscr{P}(A) = X \cup Y\) \\
+
+\textbf{(e) \(A= \{1,\{1\}\}\)} \\
+
+Subconjuntos de \(A\): \(\varnothing\), \(\{1\}\), \(\{\{1\}\}\) e \(\{1,\{1\}\} = A\) \\
+
+\(\mathscr{P}(A) = \{\varnothing, \{1\}, \{\{1\}\}, A\}\) \\
+
+\textbf{(f) \(A= \{\{1\}\}\)} \\
+
+Subconjuntos de \(A\): \(\varnothing\) e \(\{\{1\}\} = A\) \\
+
+\(\mathscr{P}(A) = \{\varnothing, A\}\) \\
+
+\textbf{(g) \(A= \{\varnothing\}\)} \\
+
+Subconjuntos de \(A\): \(\varnothing\) e \(\{\varnothing\} = A\) \\
+
+\(\mathscr{P}(A) = \{\varnothing, A\}\) \\
+
+\textbf{(h) \(A= \{\varnothing, \{\varnothing\}\}\)} \\
+
+Subconjuntos de \(A\): \(\varnothing\), \(\{\varnothing\}\), \(\{\{\varnothing\}\}\) e \(\{\varnothing,\{\varnothing\}\} = A\) \\
+
+\(\mathscr{P}(A) = \{\varnothing, \{\varnothing\}, \{\{\varnothing\}\}, A\}\) \\
+\newpage
+
+\textbf{5. Para os conjuntos dados, forme o produto cartesiano indicado.} \\
+
+\textbf{(a) \(A \times B\); \(A = \{a,b\}\), \(B = \{0,1\}\)} \\
+
+\(A \times B = \{(x,y): x \in A \text{ e } y \in B\} = \{(a, 0),(a,1),(b,0),(b,1)\}\) \\
+
+\textbf{(b) \(B \times A\); \(A = \{a,b\}\), \(B = \{0,1\}\)} \\
+
+\(B \times A = \{(x,y): x \in B \text{ e } y \in A\} = \{(0, a),(0,b),(0,a),(0,b)\}\) \\
+
+\textbf{(c) \(A \times B\); \(A = \{2,4,6,8\}\), \(B = \{2\}\)} \\
+
+\(A \times B = \{(x,y): x \in A \text{ e } y \in B\} = \{(2, 2),(4,2),(6,2),(8,2)\}\) \\
+
+\textbf{(d) \(B \times A\); \(A = \{1,5,9\}\), \(B = \{-1,1\}\)} \\
+
+\(B \times A = \{(x,y): x \in B \text{ e } y \in A\} = \{(-1, 1),(-1,5),(-1,9),(1,1), (1, 5), (1,9)\}\) \\
+
+\textbf{(e) \(B \times A\); \(A = B = \{1,2,3\}\)} \\
+
+\(B \times A = \{(x,y): x \in B \text{ e } y \in A\} = \{(1, 1),(1,2),(1,3),(2,1), (2, 2), (2,3), (3,1),(3,2),(3,3)\}\) \\
+\newpage
+
+\textbf{6. Para cada uma das seguintes funções \(f: \mathbb{Z} \to \mathbb{Z}\), determine se a função é sobrejetiva e se é injetiva. Justifique todas as respostas.} \\
+
+\textbf{(a) \(f(x) = 2x\)} \\
+
+(Injetividade de \(f\)): \\
+Tome \(x_1, x_2 \in \mathrm{D}(f)=\mathbb{Z}\) tais que \(f(x_1) = f(x_2)\). Daí, temos que \(2x_1 = 2x_2\). Ou seja, \(x_1 = x_2\). Assim, \(f\) é injetiva. \\
+
+(Sobrejetividade de \(f\)): \\
+\(f\) é sobrejetiva se, e somente se, \(\mathrm{Im}(f) = \mathrm{CD}(f)\), onde \(\mathrm{CD}(f) = \mathbb{Z}\). Porém, é falso que \(\mathrm{Im}(f) = \mathrm{CD}(f)\), pois \(3 \in \mathrm{CD}(f)\), mas \(3 \notin \mathrm{Im}(f)\) já que não existe \(x \in \mathrm{D}(f)= \mathbb{Z}\) tal que \(f(x) = 3\). Assim, \(f\) não é sobrejetiva. \\
+
+
+\textbf{(b) \(f(x) = 3x\)} \\
+
+(Injetividade de \(f\)): \\
+Tome \(x_1, x_2 \in \mathrm{D}(f)=\mathbb{Z}\) tais que \(f(x_1) = f(x_2)\). Daí, temos que \(3x_1 = 3x_2\). Ou seja, \(x_1 = x_2\). Assim, \(f\) é injetiva. \\
+
+(Sobrejetividade de \(f\)): \\
+\(f\) é sobrejetiva se, e somente se, \(\mathrm{Im}(f) = \mathrm{CD}(f)\), onde \(\mathrm{CD}(f) = \mathbb{Z}\). Porém, é falso que \(\mathrm{Im}(f) = \mathrm{CD}(f)\), pois \(2 \in \mathrm{CD}(f)\), mas \(2 \notin \mathrm{Im}(f)\) já que não existe \(x \in \mathrm{D}(f)= \mathbb{Z}\) tal que \(f(x) = 2\). Assim, \(f\) não é sobrejetiva. \\
+
+
+\textbf{(c) \(f(x) = x+3\)} \\
+
+(Injetividade de \(f\)): \\
+Tome \(x_1, x_2 \in \mathrm{D}(f)=\mathbb{Z}\) tais que \(f(x_1) = f(x_2)\). Daí, temos que \(x_1 + 3 = x_2 + 3\). Ou seja, \(x_1 = x_2\). Assim, \(f\) é injetiva. \\
+
+(Sobrejetividade de \(f\)): \\
+\(f\) é sobrejetiva se, e somente se, \(\mathrm{Im}(f) = \mathrm{CD}(f)\), onde \(\mathrm{CD}(f) = \mathbb{Z}\). Para mostrar que os dois conjuntos são iguais, basta mostrar que eles são subconjuntos um do outro. Sabemos que, por definição de função, \(\mathrm{Im}(f) \subset \mathrm{CD}(f)\). Resta mostrar que \( \mathrm{CD}(f) \subset \mathrm{Im}(f)\). \\
+
+Para isso, vamos mostrar que se \(y \in \mathrm{CD}(f)\), então \(y \in \mathrm{Im}(f)\). Considere \(y \in \mathrm{CD}(f) = \mathbb{Z}\). Temos que \(y \in \mathrm{Im}(f)\) se, e somente se, existe \(x \in \mathrm{D}(f) = \mathbb{Z}\) tal que \(f(x) = y\).  \\
+
+Se \(x = y -3\), então \(f(x) = (y-3)+3 = y\). Como \(y \in \mathbb{Z}\), então \(y-3 = x \in \mathbb{Z}\). Portanto, existe \(x \in \mathrm{D}(f) = \mathbb{Z}\) tal que \(f(x) = y\). Desse modo, \(y \in \mathrm{Im}(f)\). \\
+
+Daí, concluí-se que se \(y \in \mathrm{CD}(f)\), então \(y \in \mathrm{Im}(f)\). Logo, \( \mathrm{CD}(f) \subset \mathrm{Im}(f)\), o que significa que os conjuntos são iguais. Assim, \(f\) é sobrejetiva. \\
+
+
+\textbf{(d) \(f(x) = x^3\)} \\
+
+(Injetividade de \(f\)): \\
+Tome \(x_1, x_2 \in \mathrm{D}(f)=\mathbb{Z}\) tais que \(f(x_1) = f(x_2)\). Daí, temos que \(x_1 ^3 = x_2^ 3\). Ou seja, \(x_1^3 - x_2^3 = 0\). Porém, \(a^3 - b^3 = (a-b)(a^2 + ab + b^2)\). Assim, \(x_1^3 - x_2^3 = (x_1 - x_2)(x_1^2 + x_1x_2 + x_2^2)\). Com isso teremos, \[(x_1 - x_2)(x_1^2 + x_1x_2 + x_2^2) = 0 \Longleftrightarrow x_1 - x_2 = 0 \text{ ou } x_1^2 + x_1x_2 + x_2^2 = 0\]
+Se \(x_1 - x_2 = 0\), então \(x_1 = x_2\). Resta mostrar que para \(x_1, x_2 \in \mathbb{Z}\), não podemos ter \(x_1^2 + x_1x_2 +x_2^2 = 0\) sem que \(x_1 = x_2 = 0\). \\
+
+De fato, suponha que \(x_1 \neq 0\) e \(x_2 \neq 0\). Logo,  \(x_1^2 > 0\) e \(x_2^2 > 0\). Temos duas possibilidades: \\
+
+(i) ou \(x_1x_2 > 0\)
+
+(ii) ou \(x_1x_2 < 0\) \\
+
+Note que (i) não pode acontecer, pois a igualdade não seria satisfeita (estamos somando três números positivos e obtendo zero). Assim, o caso (ii) deve acontecer. \\
+
+Se (ii) acontece, então \\
+
+(a) ou \(x_1 < 0\) e \(x_2>0\)
+
+(b) ou \(x_1 > 0\) e \(x_2 <0\) \\
+
+Sem perda de generalidade, suponha que o item (a) acontece. Da equação, \[x_1^2 + x_1x_2 +x_2^2 = 0\]Ao somar \(x_1x_2\) em ambos os lados, teremos que \[x_1^2 + x_1x_2 +x_2^2 + (x_1x_2) = 0+(x_1x_2) \Longleftrightarrow x_1^2 + 2x_1x_2 +x_2^2 = x_1x_2 \Longleftrightarrow (x_1 + x_2)^2 = x_1x_2\] Essa equação não possui solução nos números reais, pois \((x_1+x_2)^2 \geq 0\) e \(x_1x_2 < 0\). Logo, não poderemos ter \(x_1^2 + x_1x_2 +x_2^2 = 0\) sem que \(x_1 \neq 0\) e \(x_2 \neq 0\). \\
+
+Concluí-se então que para \(x_1, x_2 \in \mathbb{Z}\), teremos que \(x_1^3 = x_2^3 \Longleftrightarrow x_1 = x_2\). Portanto, \(f\) é injetiva. \\
+
+(Sobrejetividade de \(f\)): \\
+\(f\) é sobrejetiva se, e somente se, \(\mathrm{Im}(f) = \mathrm{CD}(f)\), onde \(\mathrm{CD}(f) = \mathbb{Z}\). Porém, é falso que \(\mathrm{Im}(f) = \mathrm{CD}(f)\), pois \(4 \in \mathrm{CD}(f)\), mas \(4 \notin \mathrm{Im}(f)\) já que não existe \(x \in \mathrm{D}(f)= \mathbb{Z}\) tal que \(f(x) = 4\). Assim, \(f\) não é sobrejetiva. \\
+
+
+\textbf{(e) \(f(x) = |x|\)} \\
+
+(Injetividade de \(f\)): \\
+Note que \(f(2) = |2| =2\), mas que \(f(-2)=|-2| =2\). Assim, temos \(f(2)=f(-2)\) com \(2 \neq -2\). Portanto, \(f\) não é injetiva. \\
+
+(Sobrejetividade de \(f\)): \\
+\(f\) é sobrejetiva se, e somente se, \(\mathrm{Im}(f) = \mathrm{CD}(f)\), onde \(\mathrm{CD}(f) = \mathbb{Z}\). Porém, é falso que \(\mathrm{Im}(f) = \mathrm{CD}(f)\), pois \(-1 \in \mathrm{CD}(f)\), mas \(-1 \notin \mathrm{Im}(f)\) já que não existe \(x \in \mathrm{D}(f)= \mathbb{Z}\) tal que \(f(x) = -1\). Assim, \(f\) não é sobrejetiva. \\
+
+\textbf{(f) \(f(x) = x-|x|\)} \\
+
+(Injetividade de \(f\)): \\
+Note que \(f(16) = 16-|16| =16-16=0\), mas que \(f(3)=3-|3| =3-3=0\). Assim, temos \(f(16)=f(3)\) com \(16 \neq 3\). Portanto, \(f\) não é injetiva. \\
+
+(Sobrejetividade de \(f\)): \\
+\(f\) é sobrejetiva se, e somente se, \(\mathrm{Im}(f) = \mathrm{CD}(f)\), onde \(\mathrm{CD}(f) = \mathbb{Z}\). Porém, é falso que \(\mathrm{Im}(f) = \mathrm{CD}(f)\), pois \(-3 \in \mathrm{CD}(f)\), mas \(-3 \notin \mathrm{Im}(f)\) já que não existe \(x \in \mathrm{D}(f)= \mathbb{Z}\) tal que \(f(x) = -3\). \\
+
+De fato, \(f(x) = -3 \Longleftrightarrow x - |x| = -3 \Longleftrightarrow x+3 = |x|\). Se \(x \geq 0\), então \(|x| = x\). Daí, \(x+3 = x\). Essa equação não tem solução. Em particular, não existe \(x \in \mathbb{Z}\) que satisfaça a equação. \\
+
+Por outro lado, se \(x < 0\), então \(|x| = -x\). Daí, \(x + 3 = -x \Longleftrightarrow 2x = -3\). Essa equação não tem solução em \(\mathbb{Z}\). Logo, não existe \(x \in \mathbb{Z}\) tal que \(f(x) = -3\). Assim, \(f\) não é sobrejetiva. \\
+
+\end{document}

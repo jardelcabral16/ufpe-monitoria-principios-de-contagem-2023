@@ -1,0 +1,148 @@
+\documentclass[12pt, a4paper]{article}
+
+%%%%%% 	pacotes	%%%%%%%
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usepackage[T1]{fontenc}
+%\usepackage{fontspec} % habilita o comando /setmainfont{times new roman}
+\usepackage{graphicx, wrapfig} % para importar imagens e para coloca-las ao lado do texto
+
+\usepackage{amsmath, amsfonts, amssymb}
+
+%\usepackage{blindtext} % para gerar textos com o comando \blindtext[1]
+
+\usepackage[left=3cm,right=2cm,top=3cm,bottom=2cm]{geometry} % definindo as medidas das margens do papel
+
+%%%%%%%	preambulo	%%%%%%
+%\setmainfont{Times New Roman}
+\setlength{\baselineskip}{1.5cm} %define a distancia/espaçamento entre linhas para ser 1.5 cm (o padrao da norma ABNT)
+%\setlength{\parindent}{1.25cm} %define o recuo do paragrafo para ser 1.25cm (o padrao da norma ABNT)
+\setlength{\parindent}{0cm}
+
+\begin{document}
+\pagestyle{empty}
+
+\begin{wrapfigure}{L}{0.1\textwidth} % o parametro L: a posição da imagem em relação ao texto: a esquerda do texto. outros valores: l, r, i, o, R, O, I. Já o segundo parametro indica o quao perto o texto esta da imagem. Mudar apenas o valor numerico
+\includegraphics[width=0.065\textheight]{logo ufpe.jpg}
+%separando cada linha por multiplos de 1.5cm, o espaçamento padrão segundo as normas da ABNT.
+
+\end{wrapfigure}
+
+\noindent UNIVERSIDADE FEDERAL DE PERNAMBUCO\\CENTRO DE CIÊNCIAS EXATAS E DA NATUREZA\\DEPARTAMENTO DE MATEMÁTICA\\PRINCÍPIOS DE CONTAGEM - 2023.1\\PROFESSOR: WILLIKAT BEZERRA DE MELO\\TURMA: 2Z\\
+
+\begin{flushleft}
+
+MONITOR: JARDEL FELIPE CABRAL DOS SANTOS\\[1cm] 
+\end{flushleft}
+
+\begin{center} \textbf{RESOLUÇÃO DO SEGUNDO EXERCÍCIO ESCOLAR DE 2018.1\\[1cm]}
+\end{center}
+
+\textbf{1. De quantos modos 9 amigos podem formar uma roda de ciranda de modo que Abel e Caim não fiquem juntos?} \\
+ 
+Formaremos a roda de ciranda da seguinte maneira: \\
+
+(1) Forme uma roda de ciranda com todos os amigos exceto Abel e Caim. \\
+
+Há \(Q^{7}_{7} = \dfrac{P^{7}_7}{7} = \dfrac{7!}{7} = 6!\) maneiras de formar tal roda de ciranda. \\
+
+(2) Coloque Abel entre duas pessoas da roda formada no item anterior. \\
+
+Como temos \(7\) pessoas na roda, então haverá \(7\) locais em que se pode colocar Abel na roda. (Verifique!) \\
+
+(3) Após colocar Abel na roda, coloque Caim na roda de ciranda formada de modo que ele não fique junto com Abel.  \\ 
+
+Abel está ocupando um dos \(7\) locais mencionados no item (2). Para que Abel e Caim não fiquem juntos, Caim não deve ser colocado entre as mesmas pessoas que Abel. Assim, há \(6\) locais possíveis para colocar Caim na roda de ciranda. \\
+
+Desse modo, pelo princípio multiplicativo, há \(6! \times 7 \times 6 = 30240\) maneiras de formar uma roda de ciranda que respeita as condições impostas no enunciado. \\
+
+\textbf{2. Quantos anagramas possui a palavra TARTARUGA?} \\
+
+TARTARUGA possui \(P_{(9; 2, 3, 2, 1, 1)}=\dfrac{9!}{2! \times 3! \times 2! \times 1! \times 1!} = 15120\) anagramas. \\
+
+
+\textbf{3. Determine quantas soluções nos inteiros não-negativos possui a equação \[X+Y+Z+W=5\]} 
+
+Podemos representar cada solução como uma lista ordenada de \(4\) números \((X, Y, Z, W)\). Desse modo, \((1,0,2,2)\) representa a solução: \(X = 1\), \(Y=0\), \(Z = W = 2\). As condições que cada lista deve respeitar são: \\ 
+
+(i) \(X, Y, Z, W \in \mathbb{Z}_+\)
+
+(ii) \(X+Y+Z+W = 5\)\\
+
+Dessas duas podemos deduzir que \(0 \leq A  \leq 5, \; \forall A \in \{X,Y,Z,W\}\). Assim, contar quantas soluções nos inteiros não-negativos possui a equação é equivalente a contar quantas listas ordenadas diferentes que respeitam as condições (i) e (ii) existem.\\
+
+Para resolver esse problema de contar listas, será introduzido um novo problema e mostraremos que resolvê-lo é equivalente à resolver o problema da contagem de listas: \\
+
+\textbf{Problema: dadas as letras A,A,A,A,A,B,B,B; quantos anagramas podem ser formados usando todas elas?} \\
+
+A resposta desse problema é \(P_{(8; 5,3)} = \dfrac{8!}{5!\times 3!}\) maneiras. \\
+
+Considere um anagrama qualquer formado com essas letras. Por exemplo: ABAAABAB. Podemos associá-lo a uma única lista \((X,Y,Z,W)\) que satisfaz as propriedades (i) e (ii) mencionadas acima. A associação aconteceria da seguinte maneira: \\
+
+(a) \(X\) seria igual à quantidade de letras ``A'' antes da primeira letra ``B''. \\
+(b) \(Y\) seria igual à quantidade de letras ``A'' entre a primeira e a segunda letra ``B''. \\
+(c) \(Z\) seria igual à quantidade de letras ``A'' entre a segunda e a terceira letra ``B''. \\
+(d) \(W\) seria igual à quantidade de letras ``A'' após a terceira letra ``B''. \\
+
+Observação: se, em uma das situações, não houver letras ``A'', diremos que a quantidade será zero.\\
+
+Assim, a lista \((X,Y,Z,W)\) associada com o anagrama ABAAABAB é \((1,3,1,0)\). Note que a recíproca também é válida: podemos associar cada lista que satisfaz as propriedades (i) e (ii) com um único anagrama formado utilizando \(5\) letras ``A'' e \(3\) letras ``B''. \\
+
+Desse modo, estabelecemos a equivalência entre os dois problemas, pois a quantidade de anagramas será numericamente igual à quantidade de listas. Portanto, quantidade de soluções inteiras não-negativas da equação é: \[P_{(8; 5,3)} = \dfrac{8!}{5!\times 3!} = 56\] 
+
+Nessa fórmula, perceba que \(5\) corresponde ao resultado da soma das variáveis, \(3\) corresponde à quantidade de sinais ``\(+\)'' existentes na equação e \(8\) corresponde à soma de \(5\) e \(3\). Isto será importante para as questões seguintes. \\
+
+\textbf{4. Determine o número de soluções, nos inteiros positivos, da inequação \[X+Y+Z+W<9\]} 
+
+Como foi pedido soluções nos inteiros positivos, temos que \(X, Y,Z,W \in \mathbb{Z}\) e também: \(A \geq 1, \; \forall A \in \{X, Y, Z, W\}\). Desta segunda condição, concluí-se que \[X+Y+Z+W \geq 1+1+1+1=4\]Para que a inequação \(X+Y+Z+W <9\) seja satisfeita, deveremos ter: \\
+
+(i) ou \(X+Y+Z+W = 4\)
+
+(ii) ou \(X+Y+Z+W = 5\)
+
+(iii) ou \(X+Y+Z+W = 6\)
+
+(iv) ou \(X+Y+Z+W = 7\)
+
+(v) ou \(X+Y+Z+W = 8\) \\
+
+Não é difícil ver que nenhum dos casos acima possui solução em comum. Desse modo, após contar o número de soluções inteiras positivas de cada caso, podemos utilizar o princípio aditivo para encontrar o número total de soluções da inequação. \\
+
+Calcularemos, em detalhes, apenas a quantidade de soluções inteiras positivas do caso (ii), visto que os cálculos serão análogos para os demais casos.\\
+
+\textbf{Problema: Determinar a quantidade de soluções inteiras positivas da equação \[X+Y+Z+W = 5\]} 
+
+A única diferença desse problema para o da questão 3 é que agora todas as variáveis (\(X, Y, Z,W\)) devem ser maiores ou iguais a \(1\). Desse modo, não poderemos aplicar diretamente a técnica de contagem vista na questão 3, pois ela fornece soluções inteiras não-negativas. \\
+
+Porém, exigir que uma das variáveis, digamos \(X\), seja inteira e seja maior ou igual a \(1\) é equivalente a exigir que \(X = \overline{X} + 1\), onde \(\overline{X} \in \mathbb{Z}\) e \(\overline{X} \geq 0\). Assim, aplicando essa noção para cada variável na equação, podemos reescrever a equação como: \[(\overline{X}+1)+(\overline{Y}+1)+(\overline{Z}+1)+(\overline{W}+1)=5\]A partir dela, teremos \[\overline{X}+\overline{Y}+\overline{Z}+\overline{W}+4=5 \Longleftrightarrow   \overline{X}+\overline{Y}+\overline{Z}+\overline{W}=1\] 
+
+Podemos associar de maneira biunívoca cada solução inteira não-negativa dessa nova equação com uma solução inteira positiva da equação \(X+Y+Z+W=5\). Desse modo, a quantidade de soluções das equações  serão numericamente iguais. Assim, utilizando a técnica de contagem vista na questão 3 para a nova equação, encontraremos a quantidade de soluções do caso (ii). \\
+
+A equação mencionada no caso (ii) possuirá \[P_{(4;1,3)}=\dfrac{4!}{1!\times 3!} = 4 \text{ soluções.}\]
+
+Daí, não é difícil verificar que o caso \\
+
+
+(i) possui \(P_{(3;0,3)}=\dfrac{3!}{0!\times 3!} = 1 \text{ solução.}\) \\
+
+(ii) possui \(P_{(4;1,3)}=\dfrac{4!}{1!\times 3!} = 4 \text{ soluções.}\) \\
+
+(iii) possui \(P_{(5;2,3)}=\dfrac{5!}{2!\times 3!} = 10 \text{ soluções.}\) \\
+
+(iv) possui \(P_{(6;3,3)}=\dfrac{6!}{3!\times 3!} = 20 \text{ soluções.}\) \\
+
+(v) possui \(P_{(7;4,3)}=\dfrac{7!}{4!\times 3!} = 35 \text{ soluções.}\) \\
+
+Pelo princípio aditivo, a quantidade de soluções, nos inteiros positivos, da inequação \(X+Y+Z+W<9\) é igual a \(1+4+10+20+35=70\). \\
+
+
+\textbf{5. O Superhomem necessita comprar 20 capas novas que podem vir nas seguintes cores: encarnado, grená, vermelho e vinho. De quantos modos esta compra pode ser feita caso Superhomem deseje pelo menos 5 capas vermelhas?} \\
+
+Sejam \(E\), \(G\), \(R\) e \(V\) o número de capas compradas de cor encarnado, grená, vermelho e vinho, respectivamente. Como serão compradas \(20\) capas, temos que \[E+G+R+V=20\]
+
+Além disso, precisamos que \(R \geq 5\). Como foi feito na questão 4, podemos garantir esta condição ao considerar \(R = \overline{R} + 5\), onde \(\overline{R} \in \mathbb{Z}\) e \(\overline{R} \geq 0\). Daí, fazendo a substituição apenas da variável \(R\) na equação, teremos:\[E+G+(\overline{R}+5)+V=20 \Longleftrightarrow E+G+\overline{R}+V = 15\]
+
+Há \(P_{(18;15,3)}=\dfrac{18!}{15! \times 3!} = 816\) soluções para esta equação. Logo, há \(816\) modos de realizar as compras, respeitando as condições impostas.
+
+
+\end{document}
